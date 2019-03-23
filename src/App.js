@@ -14,6 +14,8 @@ import { CustomHook } from './hooks/UseCustomHooks'
 import ReducerHook from './hooks/UseReducerExample'
 import Progress from './animations/Progress'
 import UseLockBodyScrollExample from './hooks/UseLockBodyScrollExample'
+import UsePreviousExample from './hooks/UsePreviousExample'
+import UseOnClickOutsideExample from './hooks/UseOnClickOutsideExample'
 
 class App extends Component {
   render() {
@@ -67,9 +69,19 @@ class App extends Component {
             <Progress />
           </div>
         </Section>
-        <Section isVisible={true} heading="useLockBodyScrollExample" sectionBg="gainsboro-bg">
+        <Section isVisible={false} heading="useLockBodyScrollExample" sectionBg="gainsboro-bg">
           <div>
             <UseLockBodyScrollExample />
+          </div>
+        </Section>
+        <Section isVisible={false} heading="usePreviousExample" sectionBg="gainsboro-bg">
+          <div>
+            <UsePreviousExample />
+          </div>
+        </Section>
+        <Section isVisible={true} heading="UseOnClickOutsideExample" sectionBg="gainsboro-bg">
+          <div>
+            <UseOnClickOutsideExample />
           </div>
         </Section>
       </div>
