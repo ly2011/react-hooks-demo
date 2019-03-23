@@ -13,16 +13,9 @@ import { Title, TitleClass } from './hooks/UseEffectExample'
 import { CustomHook } from './hooks/UseCustomHooks'
 import ReducerHook from './hooks/UseReducerExample'
 import Progress from './animations/Progress'
-
-// const VISIBLE = {
-//   IS_USE_STATE_VISIBLE: 'UseStateExample',
-//   IS_USE_CONTEXT_VISIBLE: 'UseContextExample'
-// }
+import UseLockBodyScrollExample from './hooks/UseLockBodyScrollExample'
 
 class App extends Component {
-  state = {
-    isVisible: []
-  }
   render() {
     // const { isVisible } = this.state
     return (
@@ -69,9 +62,14 @@ class App extends Component {
             <ReducerHook />
           </div>
         </Section>
-        <Section isVisible={true} heading="React Spring Progress Bar Example" sectionBg="gainsboro-bg">
+        <Section isVisible={false} heading="React Spring Progress Bar Example" sectionBg="gainsboro-bg">
           <div>
             <Progress />
+          </div>
+        </Section>
+        <Section isVisible={true} heading="useLockBodyScrollExample" sectionBg="gainsboro-bg">
+          <div>
+            <UseLockBodyScrollExample />
           </div>
         </Section>
       </div>
