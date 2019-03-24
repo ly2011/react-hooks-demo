@@ -16,10 +16,21 @@ import Progress from './animations/Progress'
 import UseLockBodyScrollExample from './hooks/UseLockBodyScrollExample'
 import UsePreviousExample from './hooks/UsePreviousExample'
 import UseOnClickOutsideExample from './hooks/UseOnClickOutsideExample'
+import UseMountExample from './hooks/UseMountExample'
+import UseScrollExample from './hooks/UseScrollExample'
+import UseUpdateEffectExample from './hooks/UseUpdateEffectExample'
 
 class App extends Component {
+  state = {
+    isVisible: true
+  }
+  setVisible = () => {
+    this.setState({
+      isVisible: !this.state.isVisible
+    })
+  }
   render() {
-    // const { isVisible } = this.state
+    const { isVisible } = this.state
     return (
       <div className="App">
         <Section isVisible={false} heading="useState" sectionBg="purple-bg">
@@ -79,11 +90,27 @@ class App extends Component {
             <UsePreviousExample />
           </div>
         </Section>
-        <Section isVisible={true} heading="UseOnClickOutsideExample" sectionBg="gainsboro-bg">
+        <Section isVisible={false} heading="UseOnClickOutsideExample" sectionBg="gainsboro-bg">
           <div>
             <UseOnClickOutsideExample />
           </div>
         </Section>
+        <Section isVisible={isVisible} heading="UseMountExample" sectionBg="gainsboro-bg">
+          <div>
+            <UseMountExample />
+          </div>
+        </Section>
+        <Section isVisible={isVisible} heading="UseScrollExample" sectionBg="gainsboro-bg">
+          <div>
+            <UseScrollExample />
+          </div>
+        </Section>
+        <Section isVisible={isVisible} heading="UseUpdateEffectExample" sectionBg="gainsboro-bg">
+          <div>
+            <UseUpdateEffectExample />
+          </div>
+        </Section>
+        <button onClick={this.setVisible}>切换显隐Example</button>
       </div>
     )
   }

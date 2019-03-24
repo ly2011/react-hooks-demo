@@ -9,7 +9,9 @@ export default function UseOnClickOutsideExample() {
   return (
     <Fragment>
       {isModalOpen ? (
-        <div ref={ref}>👋 Hey, I'm a modal. Click anywhere outside of me to close.</div>
+        <div ref={ref}>
+          <span role="img">👋</span> Hey, I'm a modal. Click anywhere outside of me to close.
+        </div>
       ) : (
         <button onClick={() => setModalOpen(true)}>Open Modal</button>
       )}
